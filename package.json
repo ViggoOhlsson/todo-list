@@ -1,0 +1,25 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViggoOhlsson/todo-list.git"
+  },
+  "author": "Viggo Ohlsson FED21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViggoOhlsson/todo-list/issues"
+  },
+  "homepage": "https://github.com/ViggoOhlsson/todo-list#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
