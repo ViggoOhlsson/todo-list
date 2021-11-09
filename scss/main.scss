@@ -1,2 +1,8 @@
 @import 'variables';
 @import 'mixins';
+
+body {
+    background-color: rgb(24, 24, 24);
+    color: rgb(102, 255, 0);
+    font-size: 14pt;
+}
