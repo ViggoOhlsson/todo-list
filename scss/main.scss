@@ -5,4 +5,7 @@ body {
     background-color: rgb(24, 24, 24);
     color: rgb(102, 255, 0);
     font-size: 14pt;
+    display: flex;
+    flex-direction: column;
+    font-family: 'PT Sans', sans-serif;
 }
