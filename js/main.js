@@ -15,10 +15,12 @@ let tasks = [];
 tasks = JSON.parse(localStorage.getItem("tasks"));
 
 if (tasks === null) {
-    tasks = [new Task("This is what a Task looks like, feel free to remove it.", 1)];
+    tasks = [new Task("This is what a Task looks like, feel free to remove it.", "1")];
+    tasksToLocalStorage();
 }
 if (tasks.length == 0) {
-    tasks = [new Task("This is what a Task looks like, feel free to remove it.", 1)];
+    tasks = [new Task("This is what a Task looks like, feel free to remove it.", "1")];
+    tasksToLocalStorage();
 }
 console.log(tasks);
 window.onload = function () {
