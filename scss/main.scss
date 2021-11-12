@@ -3,9 +3,188 @@
 
 body {
     background-color: rgb(24, 24, 24);
-    color: rgb(102, 255, 0);
+    color: white;
     font-size: 14pt;
     display: flex;
     flex-direction: column;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+.wrapper {
+
+    display: flex;
+    flex-direction: column;
+}
+header {
+    padding: 0 10px;
+    height: 50px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: rgb(43, 43, 43);
+}
+.site-title {
+    color: $main-green;
+    font-size: 1.3em;
+}
+.add-button {
+    background-color: $main-green;
+    color: rgb(29, 29, 29);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    &:hover {
+        background-color: rgb(95, 172, 44);
+        cursor: pointer;
+    }
+}
+.clock {
+    text-align: right;
+    flex-grow: 1;
+}
+main {
+    margin: 0 10px;
+}
+.sort-wrapper {
+    margin: 10px 0 0 ;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.sort-button {
+    font-weight: bold;
+    background-color: white;
+    padding: 3px;
+    border-radius: 3px;
+    border: none;
+    &:hover {
+        background-color: darkgray;
+        cursor: pointer;
+    }
+}
+.task {
+    display: flex;
+    padding: 10px 0;
+    gap: 10px;
+    align-items: center;
+    cursor: default;
+    flex-wrap: wrap;
+    .task-remove {
+        font-size: 1em;
+        border: none;
+        color: $main-red;
+        background:none;
+        &:hover {
+            text-shadow: 0 0 5px black;
+            color: $main-red-dark;
+            cursor: pointer;
+        }
+
+    }
+    .task-toggle {
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        color: $main-black;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .task-title {
+        flex-grow: 1;
+    }
+    .task-started-at {
+        span {
+            color: darkgrey;
+        }
+    }
+    .task-finished-at {
+        span {
+            color: darkgrey;
+        }
+    }
+    .task-prio {
+        .one {
+            color: red;
+        }
+        .two {
+            color: yellow;
+        }
+        .three {
+            color: green;
+        }
+    }
+}
+.active-task {
+    .task-toggle {
+        background-color: $main-green;
+        &:hover {
+            background-color: $main-green-dark;
+        }
+    }
+}
+.finished-task {
+    color: darkgray;
+    .task-toggle {
+        background-color: $main-red;
+        &:hover {
+            background-color: $main-red-dark;
+        }
+    }
+}
+
+.add-modal {
+    position: fixed;
+    background-color: rgb(59, 59, 59);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    .close {
+        margin: 0 0 10px 0;
+        font-size: 1em;
+        background-color: $main-red;
+        border: none;
+        color: white;
+        border-radius: 2px;
+        &:hover {
+            background-color: $main-red-dark;
+            cursor:pointer;
+        }
+    }
+    form {
+        input[type=text] {
+            background-color: rgb(29, 29, 29);
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            padding: 4px;
+            color: white;
+        }
+        input[type=submit] {
+            background-color: $main-green;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            padding: 4px 8px;
+            color: black;
+            &:hover {
+                background-color: $main-green-dark;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        width: 1024px;
+        align-self: center;
+    }
+    header {
+        border-radius: 0 0 5px 5px;
+    }
+    main {
+        margin: 0;
+    }
 }

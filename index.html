@@ -5,22 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="minified/main.css">
-    <script href="minified/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js"></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <span class="site-title">
-                To Do List
-            </span>
-            <span class="time-watch">
 
-            </span>
-        </div>
-    </header>
-    <main>
-        
-    </main>
+    <div class="wrapper">
+        <header>
+            <span class="site-title">To Do List</span>
+            <button class="add-button" id="showModalButton"><i class="fa fa-plus"></i></button>
+            <span class="clock" id="clock">gamer</span>
+        </header>
+        <main>
+            <div class="sort-wrapper">
+                <span>Sort By:</span>
+                <button class="sort-button" id="buttonLatest">Latest</button>
+                <button class="sort-button" id="buttonOldest">Oldest</button>
+            </div>
+            <h3>Active Tasks</h3>
+            <div class="task-list" id="activeTasks">
+            </div>
+            <h3>Finished Tasks</h3>
+            <div class="task-list" id="finishedTasks">
+            </div>
+        </main>
+    </div>
+    <div class="add-modal" id="addModal" style="display: none;">
+        <button id="modalClose" class="close"><i class="fa fa-close"></i></button>
+        <form id="addForm">
+            <div>
+                <label for="formTitle">Title:</label>
+                <input id="formTitle" type="text" autocomplete="off" required/>
+            </div>
+            <div>
+                <label for="formPriority">Priority:</label>
+                <input id="range" type="range" min="1" max="3"/><span id="rangeOutput">2</span>
+            </div>
+            <input type="button" id="submit" value="Add">
+
+        </form>
+    </div>
 </body>
 </html>
