@@ -24,7 +24,6 @@ if (tasks.length == 0) {
     // tasksToLocalStorage();
     tasks = [];
 }
-console.log(tasks);
 window.onload = function () {
     Main();
 }
@@ -69,7 +68,6 @@ function Main() {
     //add task stuff
     let addForm = document.getElementById("addForm");
     addForm.addEventListener("submit", () => {
-        console.log("task added");
         let formTitle = document.getElementById("formTitle").value;
         let formPrio = document.getElementById("range").value;
         if (formTitle != "" && formPrio >= 1 && formPrio <= 3) {
@@ -90,7 +88,6 @@ function refreshAllTasks() {
 }
 
 function refreshActiveTasks() {
-    console.log("omegamonkalul");
     let list = document.getElementById("activeTasks");
     list.innerHTML = "";
     switch (sortBy) {
@@ -141,7 +138,6 @@ function refreshActiveTasks() {
                     taskPrio.innerHTML = "Priority <span class=" + prioClass + ">" + tasks[i].prio + "</span>";
                     task.appendChild(taskPrio);
                     list.appendChild(task);
-                    console.log("gamer");
                 }  
             }
             break;
@@ -193,14 +189,12 @@ function refreshActiveTasks() {
                     taskPrio.innerHTML = "Priority <span class=" + prioClass + ">" + tasks[i].prio + "</span>";
                     task.appendChild(taskPrio);
                     list.appendChild(task);
-                    console.log("gamer")
                 }  
             }
             break;
     }
 }
 function refreshFinishedTasks() {
-    console.log("omegamonkalul");
     let list = document.getElementById("finishedTasks");
     list.innerHTML = "";
     for (let i = 0; i < tasks.length; i++) {
@@ -238,7 +232,7 @@ function refreshFinishedTasks() {
 
             let taskFinishedAt = document.createElement("span");
             taskFinishedAt.className = "task-finished-at";
-            taskFinishedAt.innerHTML = "Finished At <span>" + tasks[i].startedAt + "</span>";
+            taskFinishedAt.innerHTML = "Finished At <span>" + tasks[i].finishedAt + "</span>";
             task.appendChild(taskFinishedAt);
 
             // let taskPrio = document.createElement("span");
@@ -261,7 +255,6 @@ function refreshFinishedTasks() {
             // taskPrio.innerHTML = "Priority <span class=" + prioClass + ">" + tasks[i].prio + "</span>";
             // task.appendChild(taskPrio);
             list.appendChild(task);
-            console.log("gamer")
         }  
     }
 }
