@@ -15,12 +15,14 @@ let tasks = [];
 tasks = JSON.parse(localStorage.getItem("tasks"));
 
 if (tasks === null) {
-    tasks = [new Task("This is what a Task looks like, feel free to remove it.", "1")];
-    tasksToLocalStorage();
+    // tasks = [new Task("This is what a Task looks like, feel free to remove it.", "1")];
+    // tasksToLocalStorage();
+    tasks = [];
 }
 if (tasks.length == 0) {
-    tasks = [new Task("This is what a Task looks like, feel free to remove it.", "1")];
-    tasksToLocalStorage();
+    // tasks = [new Task("This is what a Task looks like, feel free to remove it.", "1")];
+    // tasksToLocalStorage();
+    tasks = [];
 }
 console.log(tasks);
 window.onload = function () {
@@ -65,12 +67,12 @@ function Main() {
     });
 
     //add task stuff
-    let addButton = document.getElementById("submit");
-    addButton.addEventListener("click", () => {
+    let addForm = document.getElementById("addForm");
+    addForm.addEventListener("submit", () => {
         console.log("task added");
         let formTitle = document.getElementById("formTitle").value;
         let formPrio = document.getElementById("range").value;
-        if(formTitle != null && formPrio >= 1 && formPrio <= 3) {
+        if (formTitle != "" && formPrio >= 1 && formPrio <= 3) {
             let newTask = new Task(formTitle, formPrio);
             tasks.push(newTask);
             tasksToLocalStorage();
@@ -79,7 +81,7 @@ function Main() {
             formTitle = null;
             addModal.style.display = "none";
         }
-    })
+    });
 }
 
 function refreshAllTasks() {
@@ -262,10 +264,6 @@ function refreshFinishedTasks() {
             console.log("gamer")
         }  
     }
-}
-
-function addTask() {
-
 }
 
 function tasksToLocalStorage() {
